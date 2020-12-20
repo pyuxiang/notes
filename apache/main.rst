@@ -1,3 +1,7 @@
+===============================================================================
+Apache
+===============================================================================
+
 Sources:
 
 https://www.digitalocean.com/community/tutorials/how-to-configure-the-apache-web-server-on-an-ubuntu-or-debian-vps
@@ -61,3 +65,54 @@ the root directory is controlled by the Apache/PHP configuration already
 defined during setup. Easiest method to override it is to simply let
 the symbolic link ``/share/Web@`` point to a separate directory, i.e.
 ``ln -s /path/to/src /share/Web``.
+
+Schtasks success23455
+
+
+
+
+To figure out how to enable MOD_WSGI now...
+
+
+PASSWORD AUTHENTICATION
+
+``.htaccess`` files allow individual pages to require authentication,
+but increases number of checks required at each subdirectory to requested file.
+
+
+https://httpd.apache.org/docs/2.4/howto/auth.html
+
+.. code-block::
+
+    [/usr/local/apache] # ./bin/htpasswd -c /usr/local/apache/passwd/passwords USERNAME
+    New password:
+    Re-type new password:
+    Adding password for user USERNAME
+    [/usr/local/apache] # cat passwd/passwords
+    USERNAME:$apr1$k1RaHS6X$/RL.sjUTN.adcC6ErcEfv1
+
+You can then add the authentication in the Apache configuration file, known
+as ``apache.conf`` in QNAP:
+
+.. code-block::
+
+    <Directory "/share/Web">
+        Options FollowSymLinks MultiViews
+        AllowOverride All
+        AuthName "Protected"
+        AuthType Basic
+        AuthUserFile /etc/config/password.txt
+        Require valid-user
+    </Directory>
+
+
+Now trying out how to add subdomain. Is it the role of DNS or server to
+determine target? Turns out, should be DNS, because the following doesn't work:
+
+.. code-block::
+
+    $ ping qoptics.pyuxiang.com
+    Ping request could not find host qoptics.pyuxiang.com.
+    Please check the name and try again.
+
+test

@@ -1,0 +1,4 @@
+# Sphinx folders and configuration
+_static
+_templates
+conf.py
