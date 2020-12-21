@@ -1,10 +1,8 @@
-.. Web1 documentation master file, created by
-   sphinx-quickstart on Sun Dec 20 12:11:27 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+===============================================================================
+Justin's Notes
+===============================================================================
 
-Welcome to Web1's documentation!
-================================
+Notes using my QNAP.
 
 Pelican
 NodeJS
@@ -19,9 +17,16 @@ Goals
 - Describe articles with collapsible sections
 
 .. toctree::
-   :maxdepth: 1
-   :caption: Contents:
+    :maxdepth: 1
+    :caption: Web development
 
-   notes/apache/main
-   notes/notetaking/main
-   notes/sphinx/main
+    apache/index
+    sphinx/index
+    network/index
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Articles
+
+    notetaking/index
+    unix/index
