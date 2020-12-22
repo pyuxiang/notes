@@ -88,6 +88,9 @@ exception of the runtime ``.htaccess`` files), the Qthttpd service needs to be
 restarted, which can be done using the command
 ``/etc/init.d/Qthttpd.sh restart``.
 
+The syntax for the configuration files can be checked using
+``/usr/local/apache/bin/apachectl -t``.
+
 Root directory
 --------------
 
@@ -232,3 +235,18 @@ Enabling Apache modules
 The QNAP Apache server comes preloaded with some common Apache modules found
 in ``/usr/local/apache/modules``.
 To figure out how to enable MOD_WSGI now...
+
+
+Issues
+======
+
+2020-12-21
+----------
+
+Have been trying to figure out how to deal with webpages being cached by the
+browser, causing my webpages to not be updated at all.
+
+Fiddling with ``mod_expires`` by adding the line
+``ExpiresDefault "access plus 2 minutes"`` into the Apache configuration file
+caused the whole QNAP to bug out. And I didn't save any backups...
+Spent the next two hours trying to get the settings back.

@@ -2,6 +2,8 @@
 Justin's Notes
 ===============================================================================
 
+Hello from Windows!
+
 Notes using my QNAP.
 
 Pelican
@@ -30,3 +32,4 @@ Goals
 
     notetaking/index
     unix/index
+    qnap/index

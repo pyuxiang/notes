@@ -9,4 +9,3 @@ Add short introduction to Apache webserver.
 
     introduction
     qnap
-    log
