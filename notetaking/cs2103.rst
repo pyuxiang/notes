@@ -1,0 +1,29 @@
+===============================================================================
+CS2103 Software Engineering
+===============================================================================
+
+Software development cycles / Process models
+
+The sequential/waterfall model is as follows:
+
+1. Specify requirements
+2. Design product
+3. Implement
+4. Test
+5. Deploy
+
+There is also an iterative approach, divided into iterations instead of
+phases:
+
+1. Development
+2. Get feedback
+
+Problem with waterfall approach, difficult to determine time taken
+for each phase.
+But there are also downsides to iterative approach, i.e. overhead from
+redesigning features, unclear progress towards end product.
+
+Waterfall is used if requirements are well-understood, fixed and predictable.
+Iterative for fuzzy and evolving requirements.
+
+iP = iterative, breadth-first

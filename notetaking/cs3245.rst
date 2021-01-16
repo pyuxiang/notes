@@ -1,0 +1,42 @@
+===============================================================================
+CS3245 Information Retrieval
+===============================================================================
+
+Week 1
+======
+
+Language model
+--------------
+
+Language model (LM) can be created based on a text collection,
+with probabilities assigned to sequence of words after training.
+This probabilistic model does not require knowledge of the grammar.
+One such model is the unigram model - the language as an unordered collection
+of tokens (e.g. bag of words), which outputs a count / probability of an input.
+
+.. note::
+
+    Suppose an example from Lady Gaga:
+    ``I want your love and I want your revenge``.
+
+    Using a probability model, we treat each individual words as an individual
+    event. To mitigate issues with zero probabilities in limited samples,
+    smoothening can be employed to bias all counts in the LM. In an LM with
+    five more words,
+
+    .. math::
+
+        P(\text{Lady Gaga}|\text{`I don't want'}) &= \prod_n P(w_n) \\
+        &= P(\text{`I'}) \times P(\text{`don't'}) \times P(\text{`want'}) \\
+        &= .15 \times .05 \times .15
+
+Context matters. An ngram LM considers a seqeuence of n tokens, e.g. bigrams
+(n=2) and trigrams (n=3). Special START and END markers can be used to encode
+beyond word boundaries. Such a model can be used to predict a current word
+from the previous n-1 words, based on the Markov assumption.
+Ngrams models more accurate but exponentially costly to construct.
+
+.. note::
+
+    Markov Assumption: Future behaviour of dynamical system only depends
+    on its recent history, i.e. Ngram model is (N-1)-order Markov model.
