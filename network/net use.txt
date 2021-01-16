@@ -1,0 +1,27 @@
+PS C:\Users\pyxel\Desktop> net use \\10.8.0.1 /del
+The network connection could not be found.
+
+More help is available by typing NET HELPMSG 2250.
+
+PS C:\Users\pyxel\Desktop> net helpmsg 2250
+
+The network connection could not be found.
+
+
+PS C:\Users\pyxel\Desktop> net use
+New connections will be remembered.
+
+
+Status       Local     Remote                    Network
+
+-------------------------------------------------------------------------------
+OK                     \\10.8.0.1\Web            Microsoft Windows Network
+The command completed successfully.
+
+PS C:\Users\pyxel\Desktop> net use \\10.8.0.1\Web /del
+\\10.8.0.1\Web was deleted successfully.
+
+PS C:\Users\pyxel\Desktop> net use
+New connections will be remembered.
+
+There are no entries in the list.
