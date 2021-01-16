@@ -25,6 +25,7 @@ Goals
     apache/index
     sphinx/index
     network/index
+    database/index
 
 .. toctree::
     :maxdepth: 1
@@ -33,3 +34,5 @@ Goals
     notetaking/index
     unix/index
     qnap/index
+    todo/index
+    projects/index
